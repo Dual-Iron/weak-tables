@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31612.314
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeakTables", "src\WeakTables.csproj", "{55698773-E688-48F2-AFDD-63F5B5E3FF66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55698773-E688-48F2-AFDD-63F5B5E3FF66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55698773-E688-48F2-AFDD-63F5B5E3FF66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55698773-E688-48F2-AFDD-63F5B5E3FF66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55698773-E688-48F2-AFDD-63F5B5E3FF66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F2C6CD0-E2C1-4E01-940A-7D0324F88C0A}
+	EndGlobalSection
+EndGlobal
