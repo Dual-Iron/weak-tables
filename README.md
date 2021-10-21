@@ -39,11 +39,10 @@ sealed class Data {
 With that in mind, you're ready to use WeakTables.
 
 # How to integrate into your project
-Add the source to your project. There are a few ways.
-- Manual: Drop the [source code](https://github.com/Dual-Iron/weak-tables/archive/refs/heads/master.zip) into a new folder in your project.
+Simply add the source to your project. There are a few ways.
+- Git submodule (recommended): Run `git submodule add https://github.com/Dual-Iron/weak-tables lib/weak-tables` in your working tree
 - Git clone: Clone or fork this repository into a new folder in your project.
-
-Remember to rename the WeakTables namespace.
+- Manual: Drop the [source code](https://github.com/Dual-Iron/weak-tables/archive/refs/heads/master.zip) into a new folder in your project.
 
 If you can't compile the code because your language version is C# 7.3 and not 8.0, you can upgrade easily using [this tool](https://github.com/Dual-Iron/ProjectUpgrader/releases/latest).
 

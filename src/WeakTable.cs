@@ -5,7 +5,6 @@ using System.Reflection;
 using WeakTables.Collections;
 using static System.Reflection.BindingFlags;
 
-#error Right-click "WeakTables" on the line below and click Rename. Once you've renamed it, remove this line.
 namespace WeakTables
 {
     /// <summary>
