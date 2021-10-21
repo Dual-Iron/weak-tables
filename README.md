@@ -40,7 +40,7 @@ With that in mind, you're ready to use WeakTables.
 
 # How to integrate into your project
 Simply add the source to your project. There are a few ways.
-- Git submodule (recommended): Run `git submodule add https://github.com/Dual-Iron/weak-tables lib/weak-tables` in your working tree
+- Git submodule: Run `git submodule add https://github.com/Dual-Iron/weak-tables lib/weak-tables` in your working tree
 - Git clone: Clone or fork this repository into a new folder in your project.
 - Manual: Drop the [source code](https://github.com/Dual-Iron/weak-tables/archive/refs/heads/master.zip) into a new folder in your project.
 
