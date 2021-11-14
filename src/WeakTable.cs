@@ -21,14 +21,14 @@ namespace WeakTables
         /// <returns>A new instance of <typeparamref name="TData"/>.</returns>
         public delegate TData FactoryCallback(T instance);
 
-        /// <summary>
-        /// Initializes a new <see cref="WeakTable{T, TData}"/> instance without checking for possible memory leaks. Only use this for performance-critical code.
-        /// </summary>
-        /// <param name="factory">A function that returns a new <typeparamref name="TData"/> instance given its associated <typeparamref name="T"/> instance.</param>
-        public static WeakTable<T, TData> CreateUnverified(FactoryCallback factory) => new WeakTable<T, TData>(factory, 0);
+        private static bool verified = false;
 
         private static void VerifyTypes()
         {
+            if (verified) {
+                return;
+            }
+
             if (!typeof(TData).IsSealed) {
                 throw new ArgumentException($"The type \"{GenericToString(typeof(TData))}\" is not sealed.");
             }
@@ -93,6 +93,8 @@ namespace WeakTables
 
                 throw new LeakyFieldException($"{fieldString} can hold a reference to instances of \"{GenericToString(typeof(T))}\", causing memory leaks. Consider using WeakRef<T> for the field type{s} or representing the data another way.", fields);
             }
+
+            verified = true;
         }
 
         private readonly ConditionalWeakTable<T, TData> data = new ConditionalWeakTable<T, TData>();
@@ -106,11 +108,22 @@ namespace WeakTables
         public WeakTable(FactoryCallback factory)
         {
             VerifyTypes();
+
             this.factory = factory;
         }
 
-        private WeakTable(FactoryCallback factory, byte _)
+        /// <summary>
+        /// Initializes a new <see cref="WeakTable{T, TData}"/> instance.
+        /// </summary>
+        /// <param name="factory">A function that returns a new <typeparamref name="TData"/> instance given its associated <typeparamref name="T"/> instance.</param>
+        /// <param name="verify">If <see langword="false"/>, the instance will be initialized without checking for possible memory leaks.</param>
+        /// <exception cref="LeakyFieldException"/>
+        public WeakTable(FactoryCallback factory, bool verify)
         {
+            if (verify) {
+                VerifyTypes();
+            }
+
             this.factory = factory;
         }
 
