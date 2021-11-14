@@ -25,7 +25,7 @@ sealed class Program {
 # Avoiding memory leaks
 Before using WeakTables, it's important to know how to avoid memory leaks. It's pretty simple.
 
-A type is memory-safe to use if all of its fields are primitive [integrals](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types) and [floats](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types), `string`s, `char`s, `bool`s, enums, pointers, or structs/sealed classes that are also memory-safe.
+A type is memory-safe if all of its fields are [integrals](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types), [floats](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types), `string`s, `char`s, `bool`s, enums, pointers, or structs/sealed classes that are also memory-safe.
 
 If a type isn't memory-safe, wrap it in `WeakRef<T>`. For example, instead of `object`, use `WeakRef<object>`:
 
